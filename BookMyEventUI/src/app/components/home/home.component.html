@@ -1,0 +1,72 @@
+<div style="width: 100%;">
+  <div style="width: 50%; float: left;">
+    <nb-card style="height: 73vh">
+      <mat-form-field appearance="fill">
+        <mat-label>Popular Event Location</mat-label>
+        <mat-select [(value)]="selectedCity">
+          <mat-option
+            *ngFor="let item of locationList"
+            value="{{ item.value }}"
+            >{{ item.text }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <nb-list>
+        <nb-list-item *ngFor="let event of eventList">
+          <nb-flip-card style="width: 100%;">
+            <nb-card-front>
+              <nb-card accent="info" status="warning">
+                <nb-card-header>{{ event?.name }}</nb-card-header>
+                <nb-card-body>
+                  On Date:
+                  <strong>{{
+                    event?.onDate | date: "dd MMM yyyy h:mm a"
+                  }}</strong>
+                  <br />
+                  Location: <strong>{{ event?.location }}</strong>
+                </nb-card-body>
+                <nb-card-footer>
+                  <button nbButton status="primary" size="small">
+                    Book
+                  </button></nb-card-footer
+                >
+              </nb-card>
+            </nb-card-front>
+            <nb-card-back>
+              <nb-card accent="primary" status="info">
+                <nb-card-header
+                  >{{ event?.name }}
+                  <strong>Event of {{ event?.category }}</strong>
+                </nb-card-header>
+                <nb-card-body>
+                  {{ event?.description }}
+                </nb-card-body>
+              </nb-card>
+            </nb-card-back>
+          </nb-flip-card>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+  <div style="width: 47%; float: left; margin-left: 20px;">
+    <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+      <ng-container *ngFor="let category of categories">
+        <mat-card
+          fxLayout
+          fxLayoutAlign="center center"
+          fxFlex="0 1 calc(50% - 32px)"
+          style="height: 90px; cursor: pointer;"
+          (click)="onCategorySelect(category)"
+          ><mat-icon aria-hidden="false" fxFlex="50px"
+          style="zoom: 1.5;"
+            >{{ category?.matIcon }} </mat-icon
+          ><span fxFlex style="font-size: 1.5em">{{
+            category?.name
+          }}</span></mat-card
+        >
+      </ng-container>
+    </div>
+    
+  </div>
+</div>

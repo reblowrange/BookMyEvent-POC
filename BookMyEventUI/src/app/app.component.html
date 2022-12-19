@@ -1,0 +1,44 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <div style="width: 100%">
+      <div style="float: left">
+        BookMyEvent &nbsp;
+        <nb-icon
+          icon="speaker-outline"
+          status="primary"
+          [options]="{ animation: { type: 'shake' } }"
+        ></nb-icon>
+      </div>
+
+      <div style="float: right">
+        <button
+          *ngIf="!isAdminPath"
+          nbButton
+          status="primary"
+          [routerLink]="'/admin'"
+          style="zoom: 0.8"
+        >
+          Admin
+        </button>
+        <button
+          *ngIf="isAdminPath"
+          nbButton
+          status="primary"
+          [routerLink]="'/home'"
+          style="zoom: 0.8"
+        >
+          Home
+        </button>
+      </div>
+    </div>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+</nb-layout>
+<app-dialog></app-dialog>

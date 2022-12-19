@@ -1,0 +1,113 @@
+<nb-card>
+  <nb-card-body>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm)">
+      <fieldset>
+        <legend>Create Event</legend>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          fieldSize="small"
+          placeholder="Event Name"
+          formControlName="name"
+        />
+        <textarea
+          nbInput
+          fullWidth
+          placeholder="Description"
+          formControlName="description"
+        ></textarea>
+        <nb-select
+          placeholder="Category"
+          status="basic"
+          fullWidth
+          formControlName="category"
+        >
+          <nb-option *ngFor="let item of categoryList" value="{{ item.name }}"
+            >{{ item.name }}
+          </nb-option>
+        </nb-select>
+
+        <input
+          nbInput
+          placeholder="Pick Event Date & TIme"
+          fullWidth
+          [nbDatepicker]="dateTimePicker"
+          formControlName="onDate"
+        />
+        <nb-date-timepicker
+          #dateTimePicker
+          singleColumn
+          [step]="10"
+        ></nb-date-timepicker>
+
+        <nb-select
+          placeholder="Location"
+          status="basic"
+          fullWidth
+          formControlName="location"
+        >
+          <nb-option *ngFor="let item of locationList" value="{{ item.value }}"
+            >{{ item.text }}
+          </nb-option>
+        </nb-select>
+
+        <button
+          style="float: right"
+          nbButton
+          hero
+          status="success"
+          size="medium"
+        >
+          Submit
+        </button>
+        <button
+          (click)="eventForm.reset()"
+          style="float: right"
+          nbButton
+          hero
+          status="basic"
+          size="medium"
+        >
+          Reset
+        </button>
+      </fieldset>
+    </form>
+  </nb-card-body>
+</nb-card>
+
+<nb-card size="small">
+  <nb-list>
+    <nb-list-item *ngFor="let event of eventList">
+      <mat-card
+        fxLayout
+        fxLayoutAlign="center center"
+        style="height: 90px; cursor: pointer; width: 100%"
+      >
+        <div fxFlex fxLayout="column" fxLayoutGap="8px">
+          <span fxFlex style="font-size: 1.4em"
+            >{{ event?.name }} <strong> Event of </strong><pre style="display: inline;">{{ event?.category }}</pre>
+          </span>
+          <span fxFlex>
+            On Date: {{event?.onDate | date: 'dd MMM yyyy h:mm a'}} <strong>at</strong> {{event?.location}}
+          </span>
+        </div>
+
+        <span fxFlex="100px">
+          <nb-icon
+            fxFlex="50px"
+            status="primary"
+            (click)="editEvent(event.id)"
+            icon="edit-2-outline"
+          ></nb-icon>
+          <nb-icon
+            fxFlex="50px"
+            status="danger"
+            (click)="deleteEvent(event.id)"
+            icon="trash-2-outline"
+          ></nb-icon>
+        </span>
+      </mat-card>
+    </nb-list-item>
+  </nb-list>
+</nb-card>

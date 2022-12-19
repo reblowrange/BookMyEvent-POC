@@ -1,0 +1,82 @@
+<nb-card>
+  <nb-card-body>
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit(categoryForm)">
+      <fieldset>
+        <legend>Add Category</legend>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          fieldSize="small"
+          placeholder="Category Name"
+          formControlName="name"
+        />
+        <input
+          type="text"
+          nbInput
+          fieldSize="small"
+          placeholder="Mat Icon String"
+          formControlName="matIcon"
+        />
+        <a href="https://fonts.google.com/icons" target="_blank">See Icons</a>
+        <div
+          style="
+            padding: 15px;
+            display: block;
+            border: 1px solid #000;
+            margin-top: 10px;
+            width: fit-content;
+          "
+        >
+          <mat-icon
+            style="top: 2px; position: relative"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            >{{ categoryForm?.value?.matIcon }}
+          </mat-icon>
+        </div>
+
+        <button
+          style="float: right"
+          nbButton
+          hero
+          status="success"
+          size="medium"
+        >
+          Submit
+        </button>
+        <button
+          (click)="categoryForm.reset()"
+          style="float: right"
+          nbButton
+          hero
+          status="basic"
+          size="medium"
+        >
+          Reset
+        </button>
+      </fieldset>
+    </form>
+  </nb-card-body>
+</nb-card>
+
+<nb-card size="small">
+  <nb-list>
+    <nb-list-item *ngFor="let category of categoryList">
+      <mat-card
+        fxLayout
+        fxLayoutAlign="center center"
+        style="height: 90px; cursor: pointer; width: 100%;"
+        ><mat-icon aria-hidden="false" fxFlex="50px" style="zoom: 1.5"
+          >{{ category?.matIcon }} </mat-icon
+        ><span fxFlex style="font-size: 1.5em">{{
+          category?.name
+        }}</span>
+        <span fxFlex="100px">
+            <nb-icon fxFlex="50px" status="primary" (click)="editCategory(category.id)" icon="edit-2-outline"></nb-icon>
+            <nb-icon fxFlex="50px" status="danger" (click)="deleteCategory(category.id)" icon="trash-2-outline"></nb-icon>
+        </span>
+        </mat-card>
+    </nb-list-item>
+  </nb-list>
+</nb-card>

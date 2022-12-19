@@ -1,0 +1,212 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes for Failed to commit area from 0x0000000704000000 to 0x0000000713c00000 of length 264241152.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3287), pid=33400, tid=8084
+#
+# JRE version:  (11.0.16+11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:53004 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53003 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=BookMyEventBackend -javaagent:D:\Projects\installed_softwares\eclipse\eclipse\configuration\org.eclipse.osgi\215\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=UTF-8 com.alti.bookmyevent.BookMyEventApplication
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Time: Sat Sep  3 06:08:28 2022 India Standard Time elapsed time: 0.024640 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000204067af000):  JavaThread "Unknown thread" [_thread_in_vm, id=8084, stack(0x00000009d4200000,0x00000009d4300000)]
+
+Stack: [0x00000009d4200000,0x00000009d4300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x62a3ea]
+V  [jvm.dll+0x76418f]
+V  [jvm.dll+0x765839]
+V  [jvm.dll+0x765ec3]
+V  [jvm.dll+0x23da98]
+V  [jvm.dll+0x62770a]
+V  [jvm.dll+0x61c475]
+V  [jvm.dll+0x2f2aac]
+V  [jvm.dll+0x2f2932]
+V  [jvm.dll+0x2f7656]
+V  [jvm.dll+0x33a1cf]
+V  [jvm.dll+0x339c00]
+V  [jvm.dll+0x2d00c8]
+V  [jvm.dll+0x2d1236]
+V  [jvm.dll+0x73e757]
+V  [jvm.dll+0x73ffef]
+V  [jvm.dll+0x346ef9]
+V  [jvm.dll+0x723f90]
+V  [jvm.dll+0x3b5adf]
+V  [jvm.dll+0x3b7bf1]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000204064ddab0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000204067c6000 GCTaskThread "GC Thread#0" [stack: 0x00000009d4300000,0x00000009d4400000] [id=55992]
+  0x0000020406809000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000009d4400000,0x00000009d4500000] [id=66320]
+  0x0000020406809800 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000009d4500000,0x00000009d4600000] [id=51820]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc6e67f357]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000204067aaf40] Heap_lock - owner thread: 0x00000204067af000
+
+Heap address: 0x0000000704000000, size: 4032 MB, Compressed Oops mode: Non-zero based: 0x0000000704000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff61b5b0000 - 0x00007ff61b5bf000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\javaw.exe
+0x00007ffcd55d0000 - 0x00007ffcd57c8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffcd48f0000 - 0x00007ffcd49ad000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffcd2eb0000 - 0x00007ffcd317e000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffcd3180000 - 0x00007ffcd3280000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffccbde0000 - 0x00007ffccbdf8000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\jli.dll
+0x00007ffcd38d0000 - 0x00007ffcd397e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffcd39e0000 - 0x00007ffcd3a7e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffcd5290000 - 0x00007ffcd532c000 	C:\Windows\System32\sechost.dll
+0x00007ffcd5330000 - 0x00007ffcd5455000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffcd4640000 - 0x00007ffcd47e0000 	C:\Windows\System32\USER32.dll
+0x00007ffcd32b0000 - 0x00007ffcd32d2000 	C:\Windows\System32\win32u.dll
+0x00007ffcd4260000 - 0x00007ffcd428a000 	C:\Windows\System32\GDI32.dll
+0x00007ffcd3520000 - 0x00007ffcd362b000 	C:\Windows\System32\gdi32full.dll
+0x00007ffcd2e10000 - 0x00007ffcd2ead000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffcc6bd0000 - 0x00007ffcc6be5000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\VCRUNTIME140.dll
+0x00007ffcd1340000 - 0x00007ffcd15da000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffcc7eb0000 - 0x00007ffcc7eba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffcd42f0000 - 0x00007ffcd4320000 	C:\Windows\System32\IMM32.DLL
+0x00007ffc90bc0000 - 0x00007ffc91231000 	C:\Program Files\McAfee\DLP\Agent\fcagpph64.dll
+0x00007ffcd3a80000 - 0x00007ffcd41c4000 	C:\Windows\System32\SHELL32.dll
+0x00007ffcd5460000 - 0x00007ffcd558a000 	C:\Windows\System32\ole32.dll
+0x00007ffcd49e0000 - 0x00007ffcd4d34000 	C:\Windows\System32\combase.dll
+0x00007ffcd4290000 - 0x00007ffcd42e5000 	C:\Windows\System32\SHLWAPI.dll
+0x00007ffcd4530000 - 0x00007ffcd459b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffcd3630000 - 0x00007ffcd36fd000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffcb9930000 - 0x00007ffcb99c8000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x00007ffcd2be0000 - 0x00007ffcd2c12000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffcd0ed0000 - 0x00007ffcd0f03000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ffccc9b0000 - 0x00007ffccca54000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPApi.dll
+0x00007ffcd2cf0000 - 0x00007ffcd2d58000 	C:\Windows\System32\WINTRUST.dll
+0x00007ffcd3330000 - 0x00007ffcd3486000 	C:\Windows\System32\CRYPT32.dll
+0x00007ffcd28e0000 - 0x00007ffcd28f2000 	C:\Windows\SYSTEM32\MSASN1.dll
+0x00000000525d0000 - 0x00000000525dc000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPThe.dll
+0x00007ffc95bd0000 - 0x00007ffc95c6b000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\msvcp140.dll
+0x00007ffc6e3a0000 - 0x00007ffc6eeb8000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\server\jvm.dll
+0x00007ffcd45a0000 - 0x00007ffcd45a8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffcb44d0000 - 0x00007ffcb44d9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffcb9860000 - 0x00007ffcb9887000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffcd1160000 - 0x00007ffcd1172000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffcc6bc0000 - 0x00007ffcc6bd0000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\verify.dll
+0x00007ffcd0180000 - 0x00007ffcd0364000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffcc74d0000 - 0x00007ffcc74fc000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffcd3490000 - 0x00007ffcd3512000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffcc2cc0000 - 0x00007ffcc2ce8000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\java.dll
+0x00007ffcc6bb0000 - 0x00007ffcc6bba000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\jimage.dll
+0x00007ffca9a50000 - 0x00007ffca9a88000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\jdwp.dll
+0x00007ffcaf240000 - 0x00007ffcaf24e000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\instrument.dll
+0x00007ffcc2580000 - 0x00007ffcc2596000 	D:\Projects\installed_softwares\jdk-11.0.16\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\Projects\installed_softwares\jdk-11.0.16\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\McAfee\DLP\Agent;C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips;D:\Projects\installed_softwares\jdk-11.0.16\bin\server
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:53004 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53003 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=BookMyEventBackend -javaagent:D:\Projects\installed_softwares\eclipse\eclipse\configuration\org.eclipse.osgi\215\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=UTF-8 
+java_command: com.alti.bookmyevent.BookMyEventApplication
+java_class_path (initial): D:\Projects\workspace\BookMyEventBackend\target\classes;D:\User\ssonkusare\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.7.3\spring-boot-starter-data-jpa-2.7.3.jar;D:\User\ssonkusare\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.7.3\spring-boot-starter-aop-2.7.3.jar;D:\User\ssonkusare\.m2\repository\org\springframework\spring-aop\5.3.22\spring-aop-5.3.22.jar;D:\User\ssonkusare\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;D:\User\ssonkusare\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.7.3\spring-boot-starter-jdbc-2.7.3.jar;D:\User\ssonkusare\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;D:\User\ssonkusare\.m2\repository\org\springframework\spring-jdbc\5.3.22\spring-jdbc-5.3.22.jar;D:\User\ssonkusare\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;D:\User\ssonkusare\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;D:\User\ssonkusare\.m2\repository\org\hibernate\hibernate-core\5.6.10.Final\hibernate-core-5.6.10.Final.jar;D:\User\ssonkusare\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;D:\User\ssonkusare\.m2\repository\net\bytebuddy\byte-buddy\1.12.13\byte-buddy-1.12.13.jar;D:\User\ssonkusare\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;D:\User\ssonkusare\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;D:\User\ssonkusare\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;D:\User\ssonkusare\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;D:\User\ssonkusare\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.6\jaxb-runtime-2.3.6.jar;D:\User\ssonkusare\.m2\repository\org\glassfish\jaxb\txw2\2.3.6\txw2-2.3.6.jar;D:\User\ssonkusare\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4227858432                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7549744                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244108496                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\jdk-15
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\jdk-15\bin;C:\Program Files\PuTTY\;D:\Projects\installed_softwares\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\User\ssonkusare\AppData\Local\Microsoft\WindowsApps;D:\User\ssonkusare\AppData\Local\Programs\Microsoft VS Code\bin;D:\User\ssonkusare\AppData\Local\Programs\Git\cmd;D:\User\ssonkusare\AppData\Local\GitHubDesktop\bin;D:\User\ssonkusare\AppData\Roaming\npm
+USERNAME=ssonkusare
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xa4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, evex, sha, fma
+
+Memory: 4k page, system-wide physical 16126M (696M free)
+TotalPageFile size 29326M (AvailPageFile size 219M)
+current process WorkingSet (physical memory assigned to process): 15M, peak: 15M
+current process commit charge ("private bytes"): 62M, peak: 314M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199) for windows-amd64 JRE (11.0.16+11-LTS-199), built on Jun 28 2022 08:23:17 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
