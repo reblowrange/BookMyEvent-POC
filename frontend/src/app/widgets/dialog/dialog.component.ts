@@ -36,6 +36,6 @@ export class DialogComponent {
 
 
   showToast(msg: string, status: NbComponentStatus) {
-    // this.toastrService.show(status, msg, { position: NbGlobalPhysicalPosition.TOP_RIGHT, duration: 0 });
+    this.toastrService.show(status, msg, { position: NbGlobalPhysicalPosition.TOP_RIGHT, duration: 0 });
   }
 }

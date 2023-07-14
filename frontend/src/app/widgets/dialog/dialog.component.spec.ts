@@ -1,5 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  NbThemeModule,
+  NbToastrModule,
+  NbToastrService
+} from '@nebular/theme';
 import { DialogComponent } from './dialog.component';
 
 describe('DialogComponent', () => {
@@ -8,9 +15,10 @@ describe('DialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule, NbThemeModule.forRoot({ name: 'default' }), NbToastrModule.forRoot()],
+      declarations: [DialogComponent],
+      // providers: [NbToastrService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
