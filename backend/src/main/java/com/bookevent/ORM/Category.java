@@ -1,4 +1,4 @@
-package com.alti.bookmyevent.ORM;
+package com.bookevent.ORM;
 
 import java.util.List;
 

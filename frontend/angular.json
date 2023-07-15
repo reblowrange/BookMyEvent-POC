@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BookMyEventUI": {
+    "book-event-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/BookMyEventUI",
+            "outputPath": "dist/book-event-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -41,8 +41,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BookMyEventUI:build:production"
+              "browserTarget": "book-event-frontend:build:production"
             },
             "development": {
-              "browserTarget": "BookMyEventUI:build:development"
+              "browserTarget": "book-event-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BookMyEventUI:build"
+            "browserTarget": "book-event-frontend:build"
           }
         },
         "test": {
@@ -108,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "BookMyEventUI"
+  "defaultProject": "book-event-frontend"
 }

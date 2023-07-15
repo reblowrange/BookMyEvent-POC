@@ -1,8 +1,8 @@
-package com.alti.bookmyevent.service;
+package com.bookevent.service;
 
 import java.util.List;
 
-import com.alti.bookmyevent.ORM.Category;
+import com.bookevent.ORM.Category;
 
 public interface CategoryService {
 	public Category createCategory(Category category);

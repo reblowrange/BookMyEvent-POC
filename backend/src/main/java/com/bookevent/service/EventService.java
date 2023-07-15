@@ -1,8 +1,8 @@
-package com.alti.bookmyevent.service;
+package com.bookevent.service;
 
 import java.util.List;
 
-import com.alti.bookmyevent.ORM.Event;
+import com.bookevent.ORM.Event;
 
 public interface EventService {
 	Event saveEvent(Event event);

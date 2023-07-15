@@ -1,10 +1,10 @@
-package com.alti.bookmyevent;
+package com.bookevent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookMyEventApplicationTests {
+class BookEventApplicationTests {
 
 	@Test
 	void contextLoads() {

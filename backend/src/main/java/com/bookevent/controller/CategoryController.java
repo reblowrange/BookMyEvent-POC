@@ -1,10 +1,11 @@
-package com.alti.bookmyevent.controller;
+package com.bookevent.controller;
 
 import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
+import com.bookevent.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alti.bookmyevent.ORM.Category;
-import com.alti.bookmyevent.service.CategoryService;
+import com.bookevent.ORM.Category;
 
 @CrossOrigin("*")
 @RestController()
@@ -29,7 +28,8 @@ import com.alti.bookmyevent.service.CategoryService;
 @Validated
 public class CategoryController {
 	
-	@Autowired CategoryService categoryService;
+	@Autowired
+	CategoryService categoryService;
 	
 	@PostMapping()
 	public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category) {

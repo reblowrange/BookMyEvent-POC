@@ -1,9 +1,9 @@
-package com.alti.bookmyevent.repository;
+package com.bookevent.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.alti.bookmyevent.ORM.Category;
+import com.bookevent.ORM.Category;
 
 @Repository
 public interface CategoryJPARepository extends JpaRepository<Category, Integer> {

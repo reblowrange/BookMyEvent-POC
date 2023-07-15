@@ -1,11 +1,11 @@
-package com.alti.bookmyevent.repository;
+package com.bookevent.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.alti.bookmyevent.ORM.Event;
+import com.bookevent.ORM.Event;
 
 @Repository
 public interface EventJPARepository extends JpaRepository<Event, Integer> {
